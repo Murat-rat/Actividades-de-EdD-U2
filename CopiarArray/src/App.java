@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class App {
     public static void main(String[] args) throws Exception {
         int[][] arrEntrada = {
@@ -15,12 +13,19 @@ public class App {
 
         for (int i = 0; i < arrEntrada.length; i++) {
             int b = arrEntrada[i].length;
-            if (b % 2 == 1) {
-                arrSalida[i] = Arrays.copyOf(arrEntrada[i], b + 1);
-            } else {
-                arrSalida[i] = Arrays.copyOf(arrEntrada[i], b + 1);
-                arrSalida[i][b] = arrEntrada[i][0] + arrEntrada[i][b-1];
+            int[] filaNueva = new int[b + 1];
+            
+            for(int j = 0; j < b; j++) {
+                filaNueva[j] = arrEntrada[i][j];
             }
+            
+            if (b % 2 == 1) {
+                filaNueva[b] = 0;
+            } else {
+                filaNueva[b] = arrEntrada[i][0] + arrEntrada[i][b-1];
+            }
+
+            arrSalida[i] = filaNueva; 
         }
 
         System.out.println("{");
