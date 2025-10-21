@@ -67,7 +67,7 @@ public class ArrayStack<T> implements MyStack<Object> {
         if(isEmpty()){
             System.out.println("No hay elementos en el Stack");
         }
-        for (int i = top; i >= 0; i--) {
+        for (int i = top-1; i >= 0; i--) {
             System.out.println(data[i]);
         }
     }

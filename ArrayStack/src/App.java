@@ -8,6 +8,7 @@ public class App {
 
         myStack.print();
         myStack.pop();
+        System.out.println("---------------");
         myStack.print();
     }
 }
