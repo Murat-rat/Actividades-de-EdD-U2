@@ -51,7 +51,12 @@ public class ArrayStack<T> implements MyStack<Object> {
 
     @Override
     public void clear() {
-        
+        if(isEmpty()){
+            System.out.println("No hay elementos en el Stack");
+        }
+        for (int i = top-1; i >= 0; i--) {
+            data[i] = null;
+        }
     }
 
     public void addCapacity(){
@@ -68,7 +73,9 @@ public class ArrayStack<T> implements MyStack<Object> {
             System.out.println("No hay elementos en el Stack");
         }
         for (int i = top-1; i >= 0; i--) {
-            System.out.println(data[i]);
+            if(data[i] != null){
+                System.out.println(data[i]);
+            }
         }
     }
 }
